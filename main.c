@@ -2,37 +2,34 @@
 #include <stdlib.h>
 #include <string.h>
 
-//npc initialization
-typedef struct outfit		//pang chuychuy ra ni, no graphics kay kulang tag oras, pwede ra ni wala
-{
-	int head;
-	int body;
-	int legs;
-	int shoes;
-} outfit;
+//player initialization
 
-struct npc
+struct player
 {
-	char *name;
-	int pronouns;
-	int personality; 		//kamo bahala if iapil ni or dili
-	
-	float hunger;
-	float thirst;
-	float health;
-	
-	int love;
-	int anger;
-	
-	int inventory[5]; 	//iapil pa ni? Basig naa moy magamit ani
-	outfit clothes;		// pwede ra ni wala
-} npc;
+        char *name;
+        int pronouns;
+        int personality;                 //kamo bahala if iapil ni or dili
+		
+		// apilon pa ni?
+        float hunger;
+        float thirst;
+        float health;
+
+        int energy;
+        int knowledge;
+        int happiness;
+
+        int inventory[5];         //iapil pa ni? Basig naa moy magamit ani
+} player;
 
 //interaction mechanics
-void dialogue();
-
+void Dialogue();
+void Calculate();
+void Decision();
+void RandEventCheck();
+void Ending();
 
 int main ()
 {
-	return 0;
+        return 0;
 }
