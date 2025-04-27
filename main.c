@@ -4,32 +4,67 @@
 
 //player initialization
 
+/* NOTE:
+
+	Walay gamit nga gi structure ni nako actually kay usa ra
+	ka player ang available, maybe magbutang kog like gimmick
+	nga your past runs/players make appearances in random events.
+	
+*/
+
 struct player
 {
-        char *name;
+        char name[100];
         int pronouns;
-        int personality;                 //kamo bahala if iapil ni or dili
 		
 		// apilon pa ni?
         float hunger;
-        float thirst;
         float health;
 
         int energy;
         int knowledge;
         int happiness;
 
-        int inventory[5];         //iapil pa ni? Basig naa moy magamit ani
 } player;
+
+
+//system functions
+void Calculate();
+void Start();
+void InitFiles();
+void Read();
 
 //interaction mechanics
 void Dialogue();
-void Calculate();
 void Decision();
 void RandEventCheck();
 void Ending();
 
 int main ()
 {
-        return 0;
+	Start();
+	
+	//get name
+	printf("Input Name >> ");
+	fgets(player.name, 20, stdin);
+	
+	//pronouns
+	printf("[PRONOUN DIALOGUE]\n");
+	fgets(player.pronouns, 1, stdin);
+	
+	//initialize stats; I think naay better way sa pag initialize ani
+	player.energy = 100;
+	player.knowledge = 50;
+	player.happiness = 50;
+	
+	
+	return 0;
+}
+
+//START
+void Start(){
+	printf("[START DIALOGUE]\n");
+	char buff[6];
+	fgets(buff, 6, stdin);
+	if (strcmp("START", buff) != 0) Start();
 }
