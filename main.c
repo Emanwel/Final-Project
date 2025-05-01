@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define debug "DEBUG NI"
+void debug() {printf("debug ni diri WAWAWAW");}
 
 //player initialization
 
@@ -20,6 +20,7 @@ typedef struct player
 		// apilon pa ni?
         float hunger;
         float health;
+        int money;
 
         int energy;
         int knowledge;
@@ -27,44 +28,86 @@ typedef struct player
 
 } player;
 
+/*
+    statVect is basically the three stats nga important sa game, and is
+    used sa pag modify sa player stats and sa random events. Gamit kaayo
+    siya nga akoa siya gi vector actually.
+*/
+
+typedef struct statVect
+{
+    int energy;
+    int knowledge;
+    int happiness;
+} statVect;
+
+typedef struct rand_event
+{
+    int energy;
+    int knowledge;
+    int happiness;
+    
+    //choices
+    statVect a;
+    statVect b;
+    statVect c;
+    statVect d;
+} rand_event;
 
 //system functions
-void Calculate();
+void Calculate(player *player, int action);
 void Start();
-void Read();
+void Read(const char *filename, int start, int end);
+void Update(player *player);
+int EventCheck(int p);
+rand_event RandEventBuild(int type);
 
 // [IMPORTANT] i modify ang value ani later once naa na ang game over
-int gameOver = 1;
+int gameOver = 0;
+int day = 1;
+int hour[] = {6,0};
+int location = 1;
+
+//conditions
+int loseCount = 0;
+int hungerCount = 0;        //depende if apilon nato si hunger
+int studyCount = 0;
+int isDayOne = 1;
+int isWeekend = 0;
+int checkCount = 0;
 
 //interaction mechanics
 void Dialogue();
-void Decision();
-void RandEventCheck();
+void Decision(player *player);
 void Ending();
+void Talk(player *player);
 
 //actions
-void CheckWatch();
-void DisplayStats();
-void GoOutside();
+void CheckWatch(player *player);
+void DisplayStats(player *player);
+void GoOutside(player *player);
 
+//MAIN LOOP
+//gamay kaayo siya kay functions do the heavy lifting here
 int main ()
 {
     //initialization
 	Start();
-    player player = {.happiness = 70, .energy = 100, .knowledge = 70};
-	
-	printf("Input Name >> ");
-	scanf("%s", player.name);
+    player player = {.happiness = 70, .energy = 100, .knowledge = 70};;
+
+	printf("\nInput Name >> ");
+    fflush(stdout);
+    scanf("%s", player.name);
 
     //gameloop
-    int day = 1;
-    int hour = 700;
-
-    do {
-        printf("\n\n--DAY %i--\n\n", day);
-        DisplayStats(1, &player, day, &hour);
-    }
-    while (!gameOver);
+        while (!gameOver){
+            checkCount = 0;
+            if (day == 6 || day == 7 || day == 13 || day == 14) isWeekend = 1;
+            else isWeekend = 0;
+            printf("\n\n--DAY %i--\n\n", day);
+            if (day == 15) Ending();
+            DisplayStats(&player);
+        }
 	
 	return 0;
 }
@@ -75,6 +118,76 @@ void Start(){
 	char buff[100];
 	scanf("%s", buff);
 	if (strcmp("START", buff) != 0) Start();
+}
+
+void Ending(){
+
+}
+
+int EventCheck(int p){
+    checkCount = 1;
+    int prob = rand() * 100 + 1;
+    if (prob > p){
+        return 1;
+    }
+    else return 0;
+}
+
+rand_event RandEventBuild(int type){
+    int choose = rand() * 10 + 1;
+    rand_event rand;
+    int line;
+    int paragraph = 0;
+    if (type == 1) paragraph = 70;
+    line = paragraph + 1 + (choose - 1) * 7;
+    Read("event.txt", line, line + 5);
+    return rand;
+}
+
+void Update(player *player){
+    //clock update
+    if (hour[1] >= 60){
+        hour[0]++;
+        hour[1] -= 60;
+    }
+    if (hour[0] >= 24){
+        day++;
+        hour[0] -= 24;
+    }
+    //energy update
+    if (player->energy <= 0){
+        //player passes out
+        printf("\nYou passed out.");
+        hour[0] = 6;
+        hour[1] = 0;
+        day++;
+        location = 1;
+        player->energy = 75;
+        return;
+    }
+
+    /*
+        again optional na na ang hunger here, I was planning nga
+        you can buy food sa mall with money pero basig too much na
+        na siya. I might also change the mall to like an arcade or smthn.
+    */
+    if (hungerCount > 3){
+        Ending();
+    }
+
+    //check if late ka sa school; schooltime is 9:00 to 18:00
+    if (location != 2 && hour[0] >= 9 && hour[1] <= 18 && !isWeekend){
+        printf("You're late for class. Go to school now.\n");
+        player->knowledge--;
+        player->happiness--;
+    }
+
+    //rand event
+    if (EventCheck(90) && checkCount != 1){
+        //rand_event current_event = RandEventBuild(1);
+    }
+
+    Decision(player);
 }
 
 void Read(const char *filename, int start, int end){
@@ -95,14 +208,15 @@ void Read(const char *filename, int start, int end){
     fclose(fptr);
 }
 
-void DisplayStats(int location, player *player, int day, int *hour){
+void DisplayStats(player *player){
     printf("\nEnergy: %i\n", player->energy);
 
     //day 1 base case
-    if (day == 1){
+    if (isDayOne){
         Read("stats.txt", 1, 1);
         printf("\n");
-        Decision(location, player, day, hour);
+        isDayOne = 0;
+        Decision(player);
         return;
     }
 
@@ -128,12 +242,18 @@ void DisplayStats(int location, player *player, int day, int *hour){
     else if (player->happiness >= 30) Read("stats.txt", 10, 10);
     else if (player->happiness < 30) Read("stats.txt", 11, 11);
 
-    Decision(location, player, day, hour);
+    if (location == 1) printf("You're at your home, sitting in front of your cluttered desk.\n");
+    if (location == 2) printf("You're at the school, watching your teacher's canva slides show default template texts.\n");
+    if (location == 3) printf("You're at the mall. The hustle and bustle of the different stalls around you deafen your own voice.\n");
+    if (location == 4) printf("You're in a school event. One of your classes required your attendance here.\n");
+
+    Decision(player);
 }
 
-void Calculate(int location, player *player, int *hour, int action){
+void Calculate(player *player, int action){
     //delta varables
-    int d_energy, d_happiness, d_knowledge;
+    statVect base = {0, 0, 0};
+    statVect mod = {0, 0, 0};
 
     //location modifiers
 
@@ -159,41 +279,150 @@ void Calculate(int location, player *player, int *hour, int action){
         break;
     }
 
+    //actions possible
+    base.energy = 20 + mod.energy;
+    base.knowledge = 2 + mod.knowledge;
+    base.happiness = 1 + mod.happiness;
+    int studyTime = 0;
+
     switch (action){
+        
         case 1:
             //study
+            //ask for number of hours
+            studySet:
+                printf("\nEnter hours of studying (1-5)\n>> ");
+                fflush(stdout);
+                scanf("%i", &studyTime);
+                if (studyTime > 5){
+                    printf("Invalid Study Time, enter number from 1-5.");
+                    goto studySet;
+                }
+            studyCount++;
+            player->energy -= base.energy * studyTime;
+            player->knowledge += base.knowledge * studyTime;
+            player->happiness -= (base.happiness + studyCount) + studyTime;
+            hour[0] += studyTime;
+            if (studyCount >= 3) printf("You feel burnt out by the consecutive studying sessions.\n");
+            Update(player);
             break;
+
         case 2:
             //play games
+            if (location == 2) base.knowledge -= 5;
+            if ((rand() % 20 + 1) >= 10){
+                //win game
+                int dialogue = rand() % 5 + 21;
+                Read("stats.txt", dialogue, dialogue);
+                loseCount = 0;
+                base.happiness += mod.happiness;
+            }
+            else{
+                //lose game
+                int dialogue = rand() % 5 + 14;
+                Read("stats.txt", dialogue, dialogue);
+                printf("Losing Streak: %i\n", loseCount + 1);
+                loseCount++;
+                base.happiness -= loseCount;
+            }
+            player->energy -= base.energy;
+            player->knowledge += base.knowledge;
+            player->happiness -= base.happiness;
+            hour[1] += 15;
+            studyCount = 0;
+            Update(player);
             break;
+
         case 3:
-            //talk to friends
+            //sleep
+            if (location == 3) printf("You can't sleep in the mall.");
+            else if (location == 1 && hour[0] >= 21){
+                player->energy += base.energy + abs(hour[0] - 18);
+                printf("\nSleeping through the night.\n");
+                hour[0] = 6;
+                hour[1] = 0;
+                return;
+            }
+            else{
+                player->energy += base.energy;
+                hour[0] += 1;
+                printf("\nYou took a nap for an hour to refresh your senses.\n");
+                Update(player);
+            }
             break;
     }
 }
 
-void CheckWatch(){
-    
+void CheckWatch(player *player){
+    printf("You check the watch. It is %i:%02d.\n", hour[0], hour[1]);
+
+    if (hour[0] >= 21) printf("It is past your bedtime.\n");
+    else if (hour[0] >= 18) printf("The sun starts to set. You should be at home.\n");
+    else if (hour[0] >= 12) printf("The heat of the sun shines through the windows.\n");
+    else if (hour[0] >= 9) printf("It's time to attend school.\n");
+    else if (hour[0] >= 6) printf("The morning breeze flows as you look around you.\n");
+    else printf("You wonder what led you to be awake this late.\n");
+    Decision(player);
 }
 
-void GoOutside(){
-    
+void GoOutside(player *player){
+    printf("\nWhere are you going today?\n\n");
+    Read("stats.txt", 28, 30);
+    printf("\n>> ");
+
+    fflush(stdout);
+    char input[1000];
+    scanf("%s", input);
+    int destination;
+
+    if (strcmp("HOME", input) == 0) destination = 1;
+    else if (strcmp("SCHOOL", input) == 0) destination = 2;
+    else if (strcmp("MALL", input) == 0) destination = 3;
+    else{
+        printf("Invalid Input!\n");
+        GoOutside(player);
+    }
+    if (destination == location){
+        printf("You're already there.\n");
+        GoOutside(player);
+    }
+    else location = destination;
+    player->energy -= 20;
+    hour[1] += 30;
+    Update(player);
 }
 
-void Decision(int location, player *player, int day, int *hour){
+void Talk (player *player){
+    if (EventCheck(80)){
+        rand_event current_event = RandEventBuild(2);
+    }
+    else{
+        printf("\nAll of your friends seem to be busy with their own tasks as of the moment.\n");
+    }
+    Update(player);
+}
+
+void Decision(player *player){
+
+    printf("\nYou decide on what to do with your time.\n");
+    Read("Input.txt", 1, 11);
+
+    fflush(stdout);
     char input[1000];
     scanf("%s", input);
 
     //check the user's action
-    if (strcmp("TIME", input) == 0) CheckWatch(location, player, day, hour);
-    else if (strcmp("STATS", input) == 0) DisplayStats(location, player, day, hour);
-    else if (strcmp("STUDY", input) == 0) Calculate(location, player, hour, 1);
-    else if (strcmp("GAMES", input) == 0) Calculate(location, player, hour, 2);
-    else if (strcmp("TALK TO FRIENDS", input) == 0) Calculate(location, player, hour, 3);
-    else if (strcmp("GO OUTSIDE", input) == 0) GoOutside(location, player, hour);
+    if (strcmp("TIME", input) == 0) CheckWatch(player);
+    else if (strcmp("STATS", input) == 0) DisplayStats(player);
+    else if (strcmp("STUDY", input) == 0) Calculate(player,1);
+    else if (strcmp("GAMES", input) == 0) Calculate(player,2);
+    else if (strcmp("FRIENDS", input) == 0) Talk(player);
+    else if (strcmp("OUTSIDE", input) == 0) GoOutside(player);
+    else if (strcmp("SLEEP", input) == 0) Calculate(player,3);
+    else if (strcmp("END", input) == 0) exit(0);
     else
     {
         printf("Invalid Input!\n");
-        Decision(location, player, day, hour);
+        Decision(player);
     }
 }
