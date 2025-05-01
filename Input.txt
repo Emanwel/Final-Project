@@ -1,0 +1,11 @@
+Input one of these keywords to continue.
+
+STATS - Show how much energy you have for the day
+STUDY - Study for your upcoming test
+GAMES - Play a game of Lihokang Leyenda: Buto Buto
+FRIENDS - Talk to your friends about their plans for the day
+TIME - Check your watch
+OUTSIDE - Go to a place
+SLEEP - Take a 1hr nap (sleeps through the night when sleeping at home by 21:00)
+
+>>
