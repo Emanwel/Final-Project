@@ -1,6 +1,6 @@
 You feel anxious for your upcoming test. Nevertheless, you still feel confident and happy.
 
-You feel refreshed and overly confident on passing the test, remembering every note and lecture by heart.
+You feel overly confident on passing the test, remembering every note and lecture by heart.
 You feel relieved, knowing that you retain the studies from what you have studied for.
 You find yourself forgetting most of the course material, giving you a sense of dread for the coming test.
 Brain fog takes over you as anxiety seeps across your body. None of the lessons taught appear in your mind.
@@ -9,3 +9,22 @@ You enjoy every moment as you happily think of what fun things to do for the res
 Your mind wanders, feeling the enjoyment of being a college student.
 Your tired eyes seem to get heavier as time passes. You reminisce the times of constant achievements while having a good social life.
 Your mind floods you with the thoughts of you being unworthy within the university. Feeling down, a single tear runs down your cheek.
+
+[LOSING STREAK DIALOGUE]
+You whiffed your supposedly game-turning set. The entire team blames you for your humiliating error.
+You got too toxic with spamming emotes and trashtalking in chat. Your keyboard covered the fact that your base is now overrun by siege minions.
+You were matched up against an e-sports team playing alternate accounts.
+By some stroke of bad luck, your phone battery went out halfway through the game.
+You were matched against lito jay. There's nothing you can do.
+
+[WINNING DIALOGUE]
+You pushed your way to victory. Your 100% turret damage balanced out the fact that you had a whopping 0-15-0 KDA.
+Apparently the enemy team connected to a single router near you. With a single stroke of a well-aimed rock, you managed to wipe out their entire bandwidth.
+You used the newest champion after its release and bullied single fathers during their free time. As a black screen fadesin, you realize your victory was hollow.
+You rage quitted and AFK'd out of the match. As you return, your teammates applaud your victory as the bot that took your place trailblazed through the game.
+A random with their entire government name as their ingame name swept the game for your team. It was then you realize it was a bot lobby and you held the lowest score.
+
+[OUTSIDE CHOICES]
+HOME - Go back home, where you're comfortable with both studying and relaxing.
+SCHOOL - Go to school and focus on your studies On weekdays, you really need to.
+MALL - Have a place to relax and unwind and go to the mall.
