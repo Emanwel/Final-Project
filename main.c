@@ -7,17 +7,17 @@ void debug() {printf("debug ni diri WAWAWAW");}
 
 /* NOTE:
 
-	Walay gamit nga gi structure ni nako actually kay usa ra
-	ka player ang available, maybe magbutang kog like gimmick
-	nga your past runs/players make appearances in random events.
-	
+        Walay gamit nga gi structure ni nako actually kay usa ra
+        ka player ang available, maybe magbutang kog like gimmick
+        nga your past runs/players make appearances in random events.
+        
 */
 
 typedef struct player
 {
         char name[100];
-		
-		// apilon pa ni?
+
+                // apilon pa ni?
         float hunger;
         float health;
         int money;
@@ -46,7 +46,7 @@ typedef struct rand_event
     int energy;
     int knowledge;
     int happiness;
-    
+
     //choices
     statVect a;
     statVect b;
@@ -92,10 +92,10 @@ void GoOutside(player *player);
 int main ()
 {
     //initialization
-	Start();
-    player player = {.happiness = 70, .energy = 100, .knowledge = 70};;
+        Start();
+    player player = {.happiness = 50, .energy = 100, .knowledge = 50};;
 
-	printf("\nInput Name >> ");
+        printf("\nInput Name >> ");
     fflush(stdout);
     scanf("%s", player.name);
 
@@ -108,16 +108,16 @@ int main ()
             if (day == 15) Ending();
             DisplayStats(&player);
         }
-	
-	return 0;
+
+        return 0;
 }
 
 //START
 void Start(){
-	printf("[START DIALOGUE]\n");
-	char buff[100];
-	scanf("%s", buff);
-	if (strcmp("START", buff) != 0) Start();
+        printf("[START DIALOGUE]\n");
+        char buff[100];
+        scanf("%s", buff);
+        if (strcmp("START", buff) != 0) Start();
 }
 
 void Ending(){
@@ -164,6 +164,16 @@ void Update(player *player){
         location = 1;
         player->energy = 75;
         return;
+    }
+    
+    if (player->happiness <= 0){
+    	Ending();
+    	exit(0);
+    }
+    
+    if (player->knowledge <= 0){
+    	Ending();
+    	exit(0);
     }
 
     /*
@@ -236,7 +246,7 @@ void DisplayStats(player *player){
     else if (player->knowledge >= 50) Read("stats.txt", 4, 4);
     else if (player->knowledge >= 30) Read("stats.txt", 5, 5);
     else if (player->knowledge < 30) Read("stats.txt", 6, 6);
-    
+
     if (player->happiness >= 70) Read("stats.txt", 8, 8);
     else if (player->happiness >= 50) Read("stats.txt", 9, 9);
     else if (player->happiness >= 30) Read("stats.txt", 10, 10);
@@ -280,13 +290,13 @@ void Calculate(player *player, int action){
     }
 
     //actions possible
-    base.energy = 20 + mod.energy;
+    base.energy = 5 + mod.energy;
     base.knowledge = 2 + mod.knowledge;
     base.happiness = 1 + mod.happiness;
     int studyTime = 0;
 
     switch (action){
-        
+
         case 1:
             //study
             //ask for number of hours
