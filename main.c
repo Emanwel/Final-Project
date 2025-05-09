@@ -141,7 +141,6 @@ rand_event RandEventBuild(int type){
     FILE *file = fopen("numbers.txt", "r");
     if (file == NULL) {
         perror("Error opening file");
-        return 1;
     }
     
     //get choices
