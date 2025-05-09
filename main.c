@@ -15,12 +15,9 @@ void debug() {printf("debug ni diri WAWAWAW");}
 
 typedef struct player
 {
-        char name[100];
+        //char name[100];
 
-                // apilon pa ni?
-        float hunger;
-        float health;
-        int money;
+        int hunger;
 
         int energy;
         int knowledge;
@@ -48,10 +45,7 @@ typedef struct rand_event
     int happiness;
 
     //choices
-    statVect a;
-    statVect b;
-    statVect c;
-    statVect d;
+    statVect choice[4];
 } rand_event;
 
 //system functions
@@ -92,12 +86,14 @@ void GoOutside(player *player);
 int main ()
 {
     //initialization
+    	printf("[START DIALOGUE]\n");
         Start();
-    player player = {.happiness = 50, .energy = 100, .knowledge = 50};;
+    player player = {50, 100, 50, 50};
+    gameOver = 0;
 
-        printf("\nInput Name >> ");
+        /*printf("\nInput Name >> ");
     fflush(stdout);
-    scanf("%s", player.name);
+    scanf("%s", player.name);*/
 
     //gameloop
         while (!gameOver){
@@ -108,13 +104,15 @@ int main ()
             if (day == 15) Ending();
             DisplayStats(&player);
         }
+        
+        Ending();
 
         return 0;
 }
 
 //START
 void Start(){
-        printf("[START DIALOGUE]\n");
+        printf(">> ");
         char buff[100];
         scanf("%s", buff);
         if (strcmp("START", buff) != 0) Start();
@@ -136,11 +134,18 @@ int EventCheck(int p){
 rand_event RandEventBuild(int type){
     int choose = rand() * 10 + 1;
     rand_event rand;
-    int line;
-    int paragraph = 0;
-    if (type == 1) paragraph = 70;
-    line = paragraph + 1 + (choose - 1) * 7;
+    int line = 1 + (choose - 1) * 12;
     Read("event.txt", line, line + 5);
+    
+    //get choicss of event
+    FILE *file = fopen("numbers.txt", "r");
+    if (file == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+    
+    //get choices
+    
     return rand;
 }
 
@@ -175,6 +180,8 @@ void Update(player *player){
     	Ending();
     	exit(0);
     }
+    
+    if (day >= 14) gameOver = 1;
 
     /*
         again optional na na ang hunger here, I was planning nga
@@ -190,11 +197,6 @@ void Update(player *player){
         printf("You're late for class. Go to school now.\n");
         player->knowledge--;
         player->happiness--;
-    }
-
-    //rand event
-    if (EventCheck(90) && checkCount != 1){
-        //rand_event current_event = RandEventBuild(1);
     }
 
     Decision(player);
