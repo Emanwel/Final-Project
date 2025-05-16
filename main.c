@@ -40,12 +40,10 @@ typedef struct statVect
 
 typedef struct rand_event
 {
-    int energy;
-    int knowledge;
-    int happiness;
+    int line;
 
     //choices
-    statVect choice[4];
+    int choice[4][6];
 } rand_event;
 
 //system functions
@@ -54,7 +52,7 @@ void Start();
 void Read(const char *filename, int start, int end);
 void Update(player *player);
 int EventCheck(int p);
-rand_event RandEventBuild(int type);
+rand_event RandEventBuild();
 
 // [IMPORTANT] i modify ang value ani later once naa na ang game over
 int gameOver = 0;
@@ -71,7 +69,7 @@ int isWeekend = 0;
 int checkCount = 0;
 
 //interaction mechanics
-void Dialogue();
+void Dialogue(rand_event source, player *player);
 void Decision(player *player);
 void Ending();
 void Talk(player *player);
@@ -113,6 +111,7 @@ int main ()
 //START
 void Start(){
         printf(">> ");
+        fflush(stdout);
         char buff[100];
         scanf("%s", buff);
         if (strcmp("START", buff) != 0) Start();
@@ -124,28 +123,11 @@ void Ending(){
 
 int EventCheck(int p){
     checkCount = 1;
-    int prob = rand() * 100 + 1;
+    int prob = rand() % 100 + 1;
     if (prob > p){
         return 1;
     }
     else return 0;
-}
-
-rand_event RandEventBuild(int type){
-    int choose = rand() * 10 + 1;
-    rand_event rand;
-    int line = 1 + (choose - 1) * 12;
-    Read("event.txt", line, line + 5);
-    
-    //get choicss of event
-    FILE *file = fopen("numbers.txt", "r");
-    if (file == NULL) {
-        perror("Error opening file");
-    }
-    
-    //get choices
-    
-    return rand;
 }
 
 void Update(player *player){
@@ -169,6 +151,8 @@ void Update(player *player){
         player->energy = 75;
         return;
     }
+
+    player->hunger += 3;
     
     if (player->happiness <= 0){
     	Ending();
@@ -187,7 +171,7 @@ void Update(player *player){
         you can buy food sa mall with money pero basig too much na
         na siya. I might also change the mall to like an arcade or smthn.
     */
-    if (hungerCount > 3){
+    if (player->hunger > 50){
         Ending();
     }
 
@@ -217,6 +201,45 @@ void Read(const char *filename, int start, int end){
         current++;
     }
     fclose(fptr);
+}
+
+rand_event RandEventBuild(){
+    int choose = rand() % 10;
+    rand_event rand;
+    int line = 1 + choose * 17;
+    rand.line = line;
+    
+    //get choices
+    FILE *fptr = fopen("events.txt", "r");
+    if (fptr == NULL){
+        perror("ERROR RETURNING FILE");
+    }
+
+    char buff[50];
+    char *pars;
+    int current = 1;
+    int i = 0;
+
+    while(fgets(buff, 50, fptr)){
+        if (current == line + 7 + i){
+            pars = strtok(buff, ",");
+            int j = 0;
+            while (pars != NULL) {
+                int a = atoi(pars);
+                rand.choice[i][j] = a;
+                pars = strtok (NULL, ",");
+                j++;
+            }
+        
+        }
+        i++;
+        if (current > line + 11) break;
+        current++;
+    }
+    fclose(fptr);
+
+    
+    return rand;
 }
 
 void DisplayStats(player *player){
@@ -313,6 +336,7 @@ void Calculate(player *player, int action){
             player->energy -= base.energy * studyTime;
             player->knowledge += base.knowledge * studyTime;
             player->happiness -= (base.happiness + studyCount) + studyTime;
+            player->hunger += (studyTime - 1) * 3;
             hour[0] += studyTime;
             if (studyCount >= 3) printf("You feel burnt out by the consecutive studying sessions.\n");
             Update(player);
@@ -405,7 +429,10 @@ void GoOutside(player *player){
 
 void Talk (player *player){
     if (EventCheck(80)){
-        rand_event current_event = RandEventBuild(2);
+        rand_event current_event = RandEventBuild();
+        Read("events.txt", current_event.line, current_event.line + 5);
+        //printf("%i", current_event.line);
+        Dialogue(current_event, player);
     }
     else{
         printf("\nAll of your friends seem to be busy with their own tasks as of the moment.\n");
@@ -413,8 +440,29 @@ void Talk (player *player){
     Update(player);
 }
 
-void Decision(player *player){
+void Dialogue (rand_event source, player *player){
+    dial: 
+        fflush(stdin);
+        printf(">> ");
+        fflush(stdout);
+        char input[2];
+        fgets(input, 2, stdin);
+        int i = atoi(input);
+        if (i <= 0 || i >= 5) goto dial;
 
+    player->hunger -= source.choice[i][0];
+    player->energy += source.choice[i][1];
+    player->happiness += source.choice[i][2];
+    player->knowledge += source.choice[i][3];
+    hour[0] += source.choice[i][4];
+    hour[1] += source.choice[i][5];
+
+    Read("events.txt", source.line + i + 11, source.line + i + 11);
+}
+
+void Decision(player *player){
+	
+    fflush(stdin);
     printf("\nYou decide on what to do with your time.\n");
     Read("Input.txt", 1, 11);
 
