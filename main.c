@@ -129,7 +129,7 @@ void Ending(){
 int EventCheck(int p){
     checkCount = 1;
     int prob = rand() % 100 + 1;
-    if (prob > p){
+    if (prob < p){
         return 1;
     }
     else return 0;
@@ -137,15 +137,7 @@ int EventCheck(int p){
 
 void Update(player *player){
     //clock update
-    if (hour[1] >= 60){
-        hour[0]++;
-        hour[1] -= 60;
-    }
-    if (hour[0] >= 24){
-        day++;
-        hour[0] -= 24;
-    }
-    //energy update
+
     if (player->energy <= 0){
         //player passes out
         printf("\nYou passed out.");
@@ -156,6 +148,17 @@ void Update(player *player){
         player->energy = 75;
         return;
     }
+
+    if (hour[1] >= 60){
+        hour[0]++;
+        hour[1] -= 60;
+    }
+    if (hour[0] >= 24){
+        day++;
+        hour[0] -= 24;
+        return;
+    }
+    //energy update
 
     player->hunger += 3;
     
@@ -356,7 +359,7 @@ void Calculate(player *player, int action){
         case 2:
             //play games
             if (location == 2) base.knowledge -= 5;
-            if ((rand() % 20 + 1) >= 10){
+            if ((rand() % 20 + 1) >= 15){
                 //win game
                 int dialogue = rand() % 5 + 21;
                 Read("stats.txt", dialogue, dialogue);
@@ -369,11 +372,11 @@ void Calculate(player *player, int action){
                 Read("stats.txt", dialogue, dialogue);
                 printf("Losing Streak: %i\n", loseCount + 1);
                 loseCount++;
-                base.happiness -= loseCount;
+                base.happiness = -1 * base.happiness - loseCount;
             }
             player->energy -= base.energy;
             player->knowledge += base.knowledge;
-            player->happiness -= base.happiness;
+            player->happiness += base.happiness;
             hour[1] += 15;
             studyCount = 0;
             Update(player);
@@ -442,7 +445,7 @@ void GoOutside(player *player){
 }
 
 void Talk (player *player){
-    if (EventCheck(80)){
+    if (EventCheck(50)){
         rand_event current_event = RandEventBuild();
         Read("events.txt", current_event.line, current_event.line + 5);
         //printf("%i", current_event.line);
