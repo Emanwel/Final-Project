@@ -28,3 +28,64 @@ A random with their entire government name as their ingame name swept the game f
 HOME - Go back home, where you're comfortable with both studying and relaxing.
 SCHOOL - Go to school and focus on your studies On weekdays, you really need to.
 MALL - Have a place to relax and unwind and go to the mall.
+
+[DAILY NEWS]
+BREAKING NEWS: Numerous accounts of students passing out across Cebu City have
+been recorded as of today. Health workers and city officials believe the cause
+to be stress and anxiety due to the coming finals week. Students are advised to
+take frequent breaks in between activities to avoid passing out.
+
+SPONSORED: Tired of studying? Does your stomach grumble in the middle of class?
+Take your time off and visit SamgyUP! Go with friends and enjoy a 1% off discount
+for you and the people you love! We are open 24/7, offering a wide range of food
+and drinks. Hurry and grab the opportunity! Call your friends and SamgyUP tends!
+
+FEATURE: A recent study conducted by 4th year BS Computer Science students of the
+University of the Philippines has discovered adverse effects over lose-streaksin
+online gaming. The paper concluded that a lose-streak larger than three losses
+leads to an exponential decrease in academic performance and overall happiness.
+
+                        DAILY HOROSCOPE: What the Stars Speak
+Balance is the key. Some stars shift across the horizon, showing a war between two
+forces. Happiness must be one within your life. Work comes along with it. Beware of
+committing too much on one side. Your lucky number is 70. 
+
+                     ORBITUARY: Bombardino Pepito (1969-2025)
+Cause of Death: Malnutrition
+Last Words: "mukaon raman ko'g naa ako mga amigo oi"
+                                ~ Memento Mori ~
+
+OPINION: Overstudying exists, and the system encourages it. Most students across their
+time within school have experienced atleast one all-nighter or a 5-hour uninterrupted
+study session. Some see it as a way to grow, some see it as counterproductive, and even
+harmful. Is there a way to break this mentality in our schools?
+
+SCIENCE: Did you know your environment affects your emotions and behavior? Studies show
+that some places are more accomodating and well-fitted for certain tasks. You take in
+more knowledge studying within the library compared to studying within a busy food court.
+Furthermore, some even argue that you feel happier playing games at home than at school.
+
+[START DIALOGUE]
+             __   __ _______ _______ _______ ___       __   __ _______ 
+            |  | |  |       |       |       |   |     |  |_|  |       |
+            |  | |  |    _  |    ___|    ___|   |     |       |    ___|
+            |  |_|  |   |_| |   |___|   |___|   |     |       |   |___ 
+            |       |    ___|    ___|    ___|   |___  |       |    ___|
+            |       |   |   |   |___|   |___|       | | ||_|| |   |___ 
+            |_______|___|   |_______|_______|_______| |_|   |_|_______|
+
+---------------------------------------------------------------------------------------
+
+Welcome to UPeel Me, a simulator of the life of an Iskolar ng Bayan cramming over finals
+week. Your goal is not to pass the test, but to pass as a person (along with the test).
+There are multiple endings you can come across while playing the game. Try to collect
+them all!
+
+                                    !DISCLAIMER!
+
+Due to how consoles having different window and font sizes, the formatting may be broken
+for some devices and screens.
+
+                                Type [START] to play!
+
+---------------------------------------------------------------------------------------
