@@ -84,7 +84,7 @@ void GoOutside(player *player);
 int main ()
 {
     //initialization
-    	printf("[START DIALOGUE]\n");
+    	Read("stats.txt", 69, 91);
         Start();
     player player = {50, 100, 50, 50};
     gameOver = 0;
@@ -99,6 +99,11 @@ int main ()
             if (day == 6 || day == 7 || day == 13 || day == 14) isWeekend = 1;
             else isWeekend = 0;
             printf("\n\n--DAY %i--\n\n", day);
+            if (day <= 7){
+                Read ("art.txt", 21, 29);
+                printf("\n\n");
+                Read ("stats.txt", 33 + (day - 1) * 5, 36 + (day - 1) * 5);
+            }
             if (day == 15) Ending();
             DisplayStats(&player);
         }
@@ -214,28 +219,34 @@ rand_event RandEventBuild(){
     if (fptr == NULL){
         perror("ERROR RETURNING FILE");
     }
-
-    char buff[50];
+    char buff[1000];
     char *pars;
     int current = 1;
+    //debug();
     int i = 0;
+    while(fgets(buff, 1000, fptr)){
+    //debug();
 
-    while(fgets(buff, 50, fptr)){
-        if (current == line + 7 + i){
+        if (current >= line + 7 && current <= line + 10){
+            //debug();
+            //printf("%s\n", buff);
             pars = strtok(buff, ",");
             int j = 0;
             while (pars != NULL) {
+                //printf("%s ", pars);
                 int a = atoi(pars);
+                //printf("%i ", a);
                 rand.choice[i][j] = a;
                 pars = strtok (NULL, ",");
                 j++;
             }
-        
+            //printf("\n");
+            i++;
         }
-        i++;
-        if (current > line + 11) break;
+        if (current > line + 10) break;
         current++;
     }
+
     fclose(fptr);
 
     
@@ -389,7 +400,10 @@ void Calculate(player *player, int action){
 }
 
 void CheckWatch(player *player){
-    printf("You check the watch. It is %i:%02d.\n", hour[0], hour[1]);
+    Read ("art.txt", 1, 9);
+    printf ("\n           %i:%02d\n\n", hour[0], hour[1]);
+    Read ("art.txt", 11, 19);
+    printf("\nYou check the watch. It is %i:%02d.\n", hour[0], hour[1]);
 
     if (hour[0] >= 21) printf("It is past your bedtime.\n");
     else if (hour[0] >= 18) printf("The sun starts to set. You should be at home.\n");
@@ -447,8 +461,8 @@ void Dialogue (rand_event source, player *player){
         fflush(stdout);
         char input[2];
         fgets(input, 2, stdin);
-        int i = atoi(input);
-        if (i <= 0 || i >= 5) goto dial;
+        int i = atoi(input) - 1;
+        if (i < 0 || i >= 5) goto dial;
 
     player->hunger -= source.choice[i][0];
     player->energy += source.choice[i][1];
@@ -456,6 +470,12 @@ void Dialogue (rand_event source, player *player){
     player->knowledge += source.choice[i][3];
     hour[0] += source.choice[i][4];
     hour[1] += source.choice[i][5];
+
+    /**printf("%i %i\n", source.choice[i][0], player->hunger);
+    printf("%i %i\n", source.choice[i][1], player->energy);
+    printf("%i %i\n", source.choice[i][2], player->happiness);
+    printf("%i %i\n", source.choice[i][3], player->knowledge);
+    printf("%i %i\n", source.choice[i][4], hour[0]);**/
 
     Read("events.txt", source.line + i + 11, source.line + i + 11);
 }
@@ -465,6 +485,7 @@ void Decision(player *player){
     fflush(stdin);
     printf("\nYou decide on what to do with your time.\n");
     Read("Input.txt", 1, 11);
+    printf(" ");
 
     fflush(stdout);
     char input[1000];
