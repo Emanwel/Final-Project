@@ -339,10 +339,12 @@ void Calculate(player *player, int action){
             //study
             //ask for number of hours
             studySet:
+                rewind(stdin);
+                fflush(stdin);
                 printf("\nEnter hours of studying (1-5)\n>> ");
                 fflush(stdout);
                 scanf("%i", &studyTime);
-                if (studyTime > 5){
+                if (studyTime > 5 || studyTime <= 0){
                     printf("Invalid Study Time, enter number from 1-5.");
                     goto studySet;
                 }
@@ -460,6 +462,7 @@ void Talk (player *player){
 void Dialogue (rand_event source, player *player){
     dial: 
         fflush(stdin);
+        rewind(stdin);
         printf(">> ");
         fflush(stdout);
         char input[2];
