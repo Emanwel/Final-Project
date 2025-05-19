@@ -51,6 +51,7 @@ void Calculate(player *player, int action);
 void Start();
 void Read(const char *filename, int start, int end);
 void Update(player *player);
+void gameloop (player *player);
 int EventCheck(int p);
 rand_event RandEventBuild();
 
@@ -95,17 +96,7 @@ int main ()
 
     //gameloop
         while (!gameOver){
-            checkCount = 0;
-            if (day == 6 || day == 7 || day == 13 || day == 14) isWeekend = 1;
-            else isWeekend = 0;
-            printf("\n\n--DAY %i--\n\n", day);
-            if (day <= 7){
-                Read ("art.txt", 21, 29);
-                printf("\n\n");
-                Read ("stats.txt", 33 + (day - 1) * 5, 36 + (day - 1) * 5);
-            }
-            if (day == 15) Ending();
-            DisplayStats(&player);
+            gameloop(&player);
         }
         
         Ending();
@@ -120,6 +111,20 @@ void Start(){
         char buff[100];
         scanf("%s", buff);
         if (strcmp("START", buff) != 0) Start();
+}
+
+void gameloop(player *player){
+    checkCount = 0;
+    if (day == 6 || day == 7 || day == 13 || day == 14) isWeekend = 1;
+    else isWeekend = 0;
+    printf("\n\n--DAY %i--\n\n", day);
+    if (day <= 7){
+        Read ("art.txt", 21, 29);
+        printf("\n\n");
+        Read ("stats.txt", 33 + (day - 1) * 5, 36 + (day - 1) * 5);
+    }
+    if (day == 15) Ending();
+    DisplayStats(player);
 }
 
 void Ending(){
@@ -146,6 +151,7 @@ void Update(player *player){
         day++;
         location = 1;
         player->energy = 75;
+        gameloop(player);
         return;
     }
 
@@ -156,6 +162,7 @@ void Update(player *player){
     if (hour[0] >= 24){
         day++;
         hour[0] -= 24;
+        gameloop(player);
         return;
     }
     //energy update
@@ -361,7 +368,7 @@ void Calculate(player *player, int action){
         case 2:
             //play games
             if (location == 2) base.knowledge -= 5;
-            if ((rand() % 20 + 1) >= 15){
+            if ((rand() % 20 + 1) >= 5){
                 //win game
                 int dialogue = rand() % 5 + 21;
                 Read("stats.txt", dialogue, dialogue);
@@ -374,10 +381,9 @@ void Calculate(player *player, int action){
                 Read("stats.txt", dialogue, dialogue);
                 printf("Losing Streak: %i\n", loseCount + 1);
                 loseCount++;
-                base.happiness = -1 * base.happiness - loseCount;
+                base.happiness = -1 * ((base.happiness - loseCount) / 2);
             }
             player->energy -= base.energy;
-            player->knowledge += base.knowledge;
             player->happiness += base.happiness;
             hour[1] += 15;
             studyCount = 0;
@@ -392,6 +398,7 @@ void Calculate(player *player, int action){
                 printf("\nSleeping through the night.\n");
                 hour[0] = 6;
                 hour[1] = 0;
+                gameloop(player);
                 return;
             }
             else{
