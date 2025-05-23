@@ -5,9 +5,9 @@ Your friends planned to eat in a fine dining restaurant “SamgyUP”. What do y
 3) Feast like a monarch, eating all you can possibly eat
 4) Ghost your friends and study for 2 hours
 
-0,40,-5,0,1,0
-10,-40,0,2,3,0
-30,-50,10,-5,3,0
+0,20,-5,0,1,0
+10,-20,0,2,3,0
+30,-20,10,-5,3,0
 0,-20,-10,10,2,0
 
 Peer pressure had no effect on you. You slept for an hour, feeling left behind as you woke up.
