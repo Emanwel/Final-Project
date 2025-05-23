@@ -49,7 +49,7 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
-***Your friends planned to eat in a fine dining restaurant “SamgyUP”. What do you do?
+***Your family is calling you down for a family game night of Monopoly™. What do you do?
 
 1) Decline their offer and use the time to rest
 2) Ask them to bring their notes to the restaurant
@@ -66,7 +66,7 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
-***Your friends planned to eat in a fine dining restaurant “SamgyUP”. What do you do?
+***Your club has arranged a general assembly, attendance is optional but highly encouraged. What do you do?
 
 1) Decline their offer and use the time to rest
 2) Ask them to bring their notes to the restaurant
@@ -83,7 +83,7 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
-***Your friends planned to eat in a fine dining restaurant “SamgyUP”. What do you do?
+***Your upperclassmen are offering free tutor lessons in preparation for your finals. What do you do?
 
 1) Decline their offer and use the time to rest
 2) Ask them to bring their notes to the restaurant
@@ -100,7 +100,7 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
-***Your friends planned to eat in a fine dining restaurant “SamgyUP”. What do you do?
+***Your blockmates are inviting you to study with them for the upcoming exam. What do you do?
 
 1) Decline their offer and use the time to rest
 2) Ask them to bring their notes to the restaurant
@@ -117,7 +117,7 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
- ***Your friends planned to eat in a fine dining restaurant “SamgyUP”. What do you do?
+ ***Your department is hosting a game tournament for "insert game name". What do you do?
 
 1) Decline their offer and use the time to rest
 2) Ask them to bring their notes to the restaurant
@@ -134,7 +134,7 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
-Your friends planned to eat in a fine dining restaurant “SamgyUP”. What do you do?
+***Your long-time friend has returned home after several years of studying abroad and is now urging you to spend the day with them at the mall. What do you do?
 
 1) Decline their offer and use the time to rest
 2) Ask them to bring their notes to the restaurant
@@ -151,7 +151,7 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
-Your friends planned to eat in a fine dining restaurant “SamgyUP”. What do you do?
+***Your mom has two coupons for an all-expenses-paid spa day. What do you do?
 
 1) Decline their offer and use the time to rest
 2) Ask them to bring their notes to the restaurant
