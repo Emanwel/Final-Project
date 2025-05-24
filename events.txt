@@ -103,9 +103,9 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 ***Your blockmates are inviting you to study with them for the upcoming exam. What do you do?
 
 1) Accept their invite and study with them
-2) 
-3) 
-4) 
+2) Just turn down the invite, you’re not really that close anyway
+3) Thank them for the invite but say that you have prior commitments 
+4) Act like you didn't hear them and go on with your life
 
 0,40,-5,0,1,0
 10,-40,0,2,3,0
@@ -136,10 +136,10 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 
 ***Your long-time friend has returned home and is now urging you to spend the day with them at the mall. What do you do?
 
-1) Only go with them at the mention of free food
-2) 
+1) Only tag along at the mention of free food
+2) Let them know that you're feeling exhausted and kindly request to reschedule
 3) Drop everything and make up for lost time
-4) 
+4) Suggest moving the activity somewhere quieter
 
 0,40,-5,0,1,0
 10,-40,0,2,3,0
@@ -151,12 +151,12 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
-***Your mom has two coupons for an all-expenses-paid spa day. What do you do?
+***Your mom has two coupons for an all-expenses-paid stay at a resort. What do you do?
 
-1) 
-2) 
-3) 
-4) 
+1) Ask her to take you with her at the resort
+2) Don't bother doing anything—it's none of your business anyway
+3) See if you can ask for the coupons for you and your partner to use
+4) Recommend that she take your dad, especially with their anniversary approaching
 
 0,40,-5,0,1,0
 10,-40,0,2,3,0
