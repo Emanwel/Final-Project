@@ -1,6 +1,6 @@
 # Final-Project: UProcrastinate
 
-## A novel game that simulates the experience of a Filipino University student “Isko/Iska” in a one-week period before their final examinations. 
+## A novel game that simulates the experience of a Filipino University student “Isko/Iska” in a two-week period before their final examinations. 
 
 This project offers a realistic and engaging simulation of the challenges students face during intense study. Unlike typical visual novels with many branching storylines, its gameplay centers on strategically managing four key variables: hunger, knowledge acquisition, happiness, and energy. Your daily decisions and random events within the game affect these factors. To succeed on final exams, you need to balance your overall well-being with your academic preparation. The project's ultimate aim is to portray the internal struggles and external pressures that significantly influence a student's academic performance when facing tight deadlines.
 
@@ -34,11 +34,11 @@ This project offers a realistic and engaging simulation of the challenges studen
 
 ## How to Play: UProcrastinate (Isko/Iska Simulator)
 
-Welcome, Isko/Iska! Get ready to experience the intense, often unpredictable, week leading up to your final exams. This game challenges you to strategically balance your academic duties with your personal well-being to achieve the best possible outcome in your finals.
+Welcome, Isko/Iska! Get ready to experience the intense, often unpredictable, weeks leading up to your final exams. This game challenges you to strategically balance your academic duties with your personal well-being to achieve the best possible outcome in your finals.
 
 ### The Goal
 
-Your ultimate objective is to **successfully navigate the one-week period** before your final examinations and **achieve a positive outcome on your finals**. Every decision you make will impact your chances of success.
+Your ultimate objective is to **successfully navigate the two-week period** before your final examinations and **achieve a positive outcome on your finals**. Every decision you make will impact your chances of success.
 
 ### Core Mechanics
 
@@ -51,7 +51,7 @@ The game revolves around managing **four crucial player attributes** that reflec
 
 ### Your Week: Day by Day
 
-The game progresses day by day over a **one-week timeframe**. Each day, you'll be presented with **daily choices** that directly impact your Knowledge, Happiness, Energy, and Hunger levels. These choices might include:
+The game progresses day by day over a **two-week timeframe**. Each day, you'll be presented with **daily choices** that directly impact your Knowledge, Happiness, Energy, and Hunger levels. These choices might include:
 
 * Studying for different subjects
 * Taking breaks or relaxing
@@ -63,7 +63,7 @@ Choose wisely! Every decision comes with consequences, affecting your attributes
 
 ### Expect the Unexpected: Random Events
 
-Life as an Isko/Iska is rarely straightforward. Throughout the week, **unexpected random events** will occur. These events can offer opportunities to gain points in your attributes or, conversely, present challenges that might deplete them. Adaptability is key!
+Life as an Isko/Iska is rarely straightforward. Throughout the weeks, **unexpected random events** will occur. These events can offer opportunities to gain points in your attributes or, conversely, present challenges that might deplete them. Adaptability is key!
 
 ### Strategic Planning is Crucial
 
@@ -73,4 +73,4 @@ The heart of the game lies in **strategic planning**. You need to find the optim
 * **Don't just relax or eat!** Too much leisure and food without studying will leave you unprepared for exams.
 * **Manage your resources.** Use your Energy effectively to accomplish tasks that benefit you most, and ensure you're eating regularly to keep hunger at bay.
 
-Your final exam outcome will directly reflect how well you managed these core aspects throughout the week. Good luck, Isko/Iska – your finals await!
+Your final exam outcome will directly reflect how well you managed these core aspects throughout the weeks. Good luck, Isko/Iska – your finals await!
