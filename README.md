@@ -23,7 +23,6 @@ This project offers a realistic and engaging simulation of the challenges studen
    First, clone the repository to your local machine:  
    ```
    git clone https://github.com/Emanwel/Final-Project.git  
-   cd Final-Project
    ```
 3. Compiling and Running the Program
 
