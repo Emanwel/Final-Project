@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void debug() {printf("debug ni diri WAWAWAW");}
+
 
 //player initialization
 
@@ -72,13 +72,15 @@ int checkCount = 0;
 //interaction mechanics
 void Dialogue(rand_event source, player *player);
 void Decision(player *player);
-void Ending();
+void Ending(int p, player *player);
 void Talk(player *player);
 
 //actions
 void CheckWatch(player *player);
 void DisplayStats(player *player);
 void GoOutside(player *player);
+
+void debug(player *player) {printf("\nHappiness: %i\nKnowledge: %i\nHunger: %i\nDays Played: %i\n", player->happiness, player->knowledge, player->hunger, day);}
 
 //MAIN LOOP
 //gamay kaayo siya kay functions do the heavy lifting here
@@ -98,8 +100,6 @@ int main ()
         while (!gameOver){
             gameloop(&player);
         }
-        
-        Ending();
 
         return 0;
 }
@@ -123,12 +123,38 @@ void gameloop(player *player){
         printf("\n\n");
         Read ("stats.txt", 33 + (day - 1) * 5, 36 + (day - 1) * 5);
     }
-    if (day == 15) Ending();
     DisplayStats(player);
 }
 
-void Ending(){
+void Ending(int p, player *player){
+    char *ends = " ";
+    switch (p) {
+        case 0:
+            printf("\nYou lost all positivity and motivation for school. You stopped going to school and locked yourself in your room. [ENDING 1]");
+            break;
+        case 1:
+            printf("\nYour teachers are getting concerned for your grades. You got sent into a special tutoring program. [ENDING 2]");
+            break;
+        case 2:
+            printf("\nYou got sent to the hospital by the clinic for your concerning malnutrition. [ENDING 3]");
+            break;
+        case 3:
+            if (player->knowledge >= 70) Read("stats.txt", 93, 93);
+            else if (player->knowledge >= 50) Read("stats.txt", 94, 94);
+            else if (player->knowledge >= 30) Read("stats.txt", 95, 95);
+            else if (player->knowledge < 30) Read("stats.txt", 96, 96);
 
+            if (player->happiness >= 70) Read("stats.txt", 98, 98);
+            else if (player->happiness >= 50) Read("stats.txt", 99, 99);
+            else if (player->happiness >= 30) Read("stats.txt", 100, 100);
+            else if (player->happiness < 30) Read("stats.txt", 101, 101);
+
+            break;
+    }
+
+    debug(player);
+    printf("\nEnter any key to exit.\n>> ");
+    scanf("%s", ends);
 }
 
 int EventCheck(int p){
@@ -170,16 +196,14 @@ void Update(player *player){
     player->hunger += 3;
     
     if (player->happiness <= 0){
-    	Ending();
-    	exit(0);
+    	Ending(0, player);
     }
     
     if (player->knowledge <= 0){
-    	Ending();
-    	exit(0);
+    	Ending(1, player);
     }
     
-    if (day >= 14) gameOver = 1;
+    if (day >= 14) Ending(3, player);
 
     /*
         again optional na na ang hunger here, I was planning nga
@@ -187,7 +211,7 @@ void Update(player *player){
         na siya. I might also change the mall to like an arcade or smthn.
     */
     if (player->hunger > 50){
-        Ending();
+        Ending(2, player);
     }
 
     //check if late ka sa school; schooltime is 9:00 to 18:00
@@ -513,6 +537,7 @@ void Decision(player *player){
     else if (strcmp("OUTSIDE", input) == 0) GoOutside(player);
     else if (strcmp("SLEEP", input) == 0) Calculate(player,3);
     else if (strcmp("END", input) == 0) exit(0);
+    else if (strcmp("DEBUG", input) == 0) debug(player);
     else
     {
         printf("Invalid Input!\n");
