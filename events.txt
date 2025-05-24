@@ -34,20 +34,20 @@ You fell asleep while reading the messages and woke up only to find that you had
 
 ***Your partner is hitting you up for a coffee date to unwind and spend some quality time. What do you do?
 
-1) Decline their offer and use the time to rest
-2) Ask them to bring their notes to the restaurant
-3) Feast like a monarch, eating all you can possibly eat
-4) Ghost your friends and study for 2 hours
+1) Respond to their offer and get ready
+2) Send your apologies and continue studying for 3 hours
+3) Invite them over instead for a cozy home date
+4) Rest your head and leave them unread
 
 0,40,-5,0,1,0
 10,-40,0,2,3,0
 30,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-Peer pressure had no effect on you. You slept for an hour, feeling left behind as you woke up.
-Your friends question your request but eventually agreed. For three hours you and your friends stained your notebooks with chili sauce.
-Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
-You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
+Your date went well, and you feel rejuvenated. Afterward, however, you began to question some of your understanding.
+You felt sad for rejecting your partner's invite, but they still sent over some coffee and snacks with a note. You feel more motivated to study after such a sweet gesture.
+Your partner came over with some food and, showing their support, helped you review the lessons you had already covered, which helped you master them.
+While you were deep in sleep, you forgot some concepts in the middle of your dream.
 
 ***Your family is calling you down for a family game night of Monopoly™. What do you do?
 
