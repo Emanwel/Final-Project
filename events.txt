@@ -66,20 +66,20 @@ Your sibling burst into your room and started crying, saying that you don't love
 You dominated the game and won, leaving you feeling accomplished. As a bonus, the game also helped you understand a concept you had previously struggled with.
 Your parents came to your room and scolded you for not responding or acknowledging their call. You felt bad after they left, and in response, you drowned yourself in sad songs.
 
-***Your club has arranged a general assembly, attendance is optional but highly encouraged. What do you do?
+***Your organization has arranged a general assembly, attendance is mandatory. What do you do?
 
-1) 
-2) 
-3) 
-4) 
+1) Just sign the attendance and leave once it gets boring
+2) Make up an excuse to ditch the assembly and hang out with your friends
+3) Make the most of your time by studying your notes while attending the assembly
+4) Attend the meeting with complete focus, carefully noting every single detail
 
 0,40,-5,0,1,0
 10,-40,0,2,3,0
 30,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-Peer pressure had no effect on you. You slept for an hour, feeling left behind as you woke up.
-Your friends question your request but eventually agreed. For three hours you and your friends stained your notebooks with chili sauce.
+You prioritized comfort over social participation and felt no guilt at all. In fact, you felt liberated and decided to study for two hours after leaving.
+Time with friends matters the most to you. You had fun at the mall with them—so much fun that you forgot everything you had just learned.
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
