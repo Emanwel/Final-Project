@@ -102,7 +102,7 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 
 ***Your blockmates are inviting you to study with them for the upcoming exam. What do you do?
 
-1) 
+1) Accept their invite and study with them
 2) 
 3) 
 4) 
@@ -117,12 +117,12 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
- ***Your department is hosting a game tournament for Lihokang Liyenda: Buto Buto. What do you do?
+ ***Your favorite show just released a new episode. After that cliffhanger in the last one, you're dying to know what happens next. What do you do?
 
-1) 
-2) 
-3) 
-4) 
+1) Leave it out for later and let it marinate
+2) The key is multitasking: start the episode while you study
+3) Click that link immediately and watch the latest episode
+4) Call your friends to stream and watch the new episode together
 
 0,40,-5,0,1,0
 10,-40,0,2,3,0
@@ -136,9 +136,9 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 
 ***Your long-time friend has returned home and is now urging you to spend the day with them at the mall. What do you do?
 
-1) 
+1) Only go with them at the mention of free food
 2) 
-3) 
+3) Drop everything and make up for lost time
 4) 
 
 0,40,-5,0,1,0
