@@ -95,10 +95,10 @@ The secretary assigned to take the minutes was late and missed some important de
 30,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-Peer pressure had no effect on you. You slept for an hour, feeling left behind as you woke up.
-Your friends question your request but eventually agreed. For three hours you and your friends stained your notebooks with chili sauce.
-Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
-You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
+You gained a deep understanding, but you're now feeling drained and quite hungry from the long hours.
+The notes gave you a general idea, but you're mostly well-rested and happy with your free time.
+Your inconsistent attendance left you feeling unprepared and guilty, you struggled keeping up with the topics being discussed during the tutoring session.
+You stuck to your independent study plan, feeling good about your self-reliance and managing your own pace.
 
 ***Your blockmates are inviting you to study with them for the upcoming exam. What do you do?
 
@@ -112,12 +112,12 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 30,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-Peer pressure had no effect on you. You slept for an hour, feeling left behind as you woke up.
-Your friends question your request but eventually agreed. For three hours you and your friends stained your notebooks with chili sauce.
-Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
-You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
+You gained new insights from the discussion, but the long session left you feeling worn out.
+You preserved your personal time, but missed out on potential shared learning opportunities.
+You politely declined, then proceeded to follow through with your own study schedule and feeling good about your focus.
+They kept pestering you, causing an annoying distraction that left you frustrated and behind schedule.
 
- ***Your favorite show just released a new episode. After that cliffhanger in the last one, you're dying to know what happens next. What do you do?
+***Your favorite show just released a new episode. After that cliffhanger in the last one, you're dying to know what happens next. What do you do?
 
 1) Leave it out for later and let it marinate
 2) The key is multitasking: start the episode while you study
@@ -129,10 +129,10 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 30,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-Peer pressure had no effect on you. You slept for an hour, feeling left behind as you woke up.
-Your friends question your request but eventually agreed. For three hours you and your friends stained your notebooks with chili sauce.
-Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
-You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
+You successfully resisted the urge. Feeling proud and motivated, you decided to study for 3 hours, maintaining your focus with a sense of discipline.
+You got distracted by the exciting plot, making both studying and watching ineffective.
+You fully immersed yourself in the episode, enjoying a well-deserved break that refreshed your spirits.
+The group stream turned into a fun social event, but you barely paid attention to the actual episode or your studies.
 
 ***Your long-time friend has returned home and is now urging you to spend the day with them at the mall. What do you do?
 
@@ -146,10 +146,10 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 30,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-Peer pressure had no effect on you. You slept for an hour, feeling left behind as you woke up.
-Your friends question your request but eventually agreed. For three hours you and your friends stained your notebooks with chili sauce.
-Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
-You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
+You enjoyed the free food, but the crowded mall quickly left you feeling drained.
+You managed to politely decline, suggesting to reschedule it after your final exams are done. This allowed you to conserve your focus for your studies.
+You had an amazing time reconnecting, but the day's fun left you completely worn out and behind schedule.
+You had a meaningful catch-up without overwhelming your current priorities.
 
 ***Your mom has two coupons for an all-expenses-paid stay at a resort. What do you do?
 
@@ -163,8 +163,8 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 30,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-Peer pressure had no effect on you. You slept for an hour, feeling left behind as you woke up.
-Your friends question your request but eventually agreed. For three hours you and your friends stained your notebooks with chili sauce.
-Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
-You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
+You enjoyed a luxurious break, returning refreshed but with a slight pang of guilt about your studies.
+You remained completely focused on your work, undisturbed by the outside world.
+You and your partner had a wonderful, romantic getaway, completely putting your studies aside for the day.
+Your parents were thrilled, and you felt happy knowing you made them smile, bringing some calm to your day.
 
