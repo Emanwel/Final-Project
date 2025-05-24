@@ -5,7 +5,7 @@
 This project offers a realistic and engaging simulation of the challenges students face during intense study. Unlike typical visual novels with many branching storylines, its gameplay centers on strategically managing four key variables: hunger, knowledge acquisition, happiness, and energy. Your daily decisions and random events within the game affect these factors. To succeed on final exams, you need to balance your overall well-being with your academic preparation. The project's ultimate aim is to portray the internal struggles and external pressures that significantly influence a student's academic performance when facing tight deadlines.
 
 
-## How to Compile?
+## How to Compile
 
 1. Prerequisites
 
@@ -33,7 +33,7 @@ This project offers a realistic and engaging simulation of the challenges studen
    * **Launch from the IDE:** Utilize your IDE's built-in run functionality, which will typically recompile if necessary and then execute the program immediately.
 
 
-## How to Play?: UProcrastinate (Isko/Iska Simulator)
+## How to Play: UProcrastinate (Isko/Iska Simulator)
 
 Welcome, Isko/Iska! Get ready to experience the intense, often unpredictable, week leading up to your final exams. This game challenges you to strategically balance your academic duties with your personal well-being to achieve the best possible outcome in your finals.
 
