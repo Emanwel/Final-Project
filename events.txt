@@ -85,10 +85,10 @@ The secretary assigned to take the minutes was late and missed some important de
 
 ***Your upperclassmen are offering free tutor lessons in preparation for your finals. What do you do?
 
-1) 
-2) 
-3) 
-4) 
+1) Register for all the sessions and pay close attention to fully understand the material
+2) Just ask your blockmates who are attending the tutorial sessions for their notes
+3) Just go when you're in the mood
+4) You know that tutoring doesn’t suit you, so you prefer to study independently
 
 0,40,-5,0,1,0
 10,-40,0,2,3,0
