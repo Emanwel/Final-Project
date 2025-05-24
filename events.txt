@@ -51,20 +51,20 @@ While you were deep in sleep, you forgot some concepts in the middle of your dre
 
 ***Your family is calling you down for a family game night of Monopoly™. What do you do?
 
-1) 
-2) 
+1) Tell them to pass and that you will be studying in your room
+2) Call your friends instead and play with them
 3) Go downstairs to join in the game
-4) 
+4) Deadma to your family and just chill in your room
 
 0,40,-5,0,1,0
 10,-40,0,2,3,0
 30,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-Peer pressure had no effect on you. You slept for an hour, feeling left behind as you woke up.
-Your friends question your request but eventually agreed. For three hours you and your friends stained your notebooks with chili sauce.
+Peace was upon you, and you used your time to the fullest. You learned a lot and understood everything, but the guilt of not spending time with your family still lingers
+Your sibling burst into your room and started crying, saying that you don't love them because you don't play with them anymore, leaving you feeling guilty.
 You dominated the game and won, leaving you feeling accomplished. As a bonus, the game also helped you understand a concept you had previously struggled with.
-You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
+Your parents came to your room and scolded you for not responding or acknowledging their call. You felt bad after they left, and in response, you drowned yourself in sad songs.
 
 ***Your club has arranged a general assembly, attendance is optional but highly encouraged. What do you do?
 
