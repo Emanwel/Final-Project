@@ -18,8 +18,8 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 ***Your lola is celebrating their 100th birthday and your family gc is bustling with notifications about the party. What do you do?
 
 1) Reply in the group chat to join in on the fun
-2) Ask them to bring their notes to the restaurant
-3) Feast like a monarch, eating all you can possibly eat
+2) Mute the gc and lock in
+3) Send your wishes to lola and ask for leftovers in the group chat
 4) Ghost your friends and study for 2 hours
 
 0,40,-5,0,1,0
@@ -27,9 +27,9 @@ You felt guilty leaving your friends on read while begrudgingly dragging yoursel
 30,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-You joined your lola's birthday celebration and had the most fun you've had in weeks. You had so much fun that you forgot the topics that you'd worked hard to understand over the past few days.
-Your friends question your request but eventually agreed. For three hours you and your friends stained your notebooks with chili sauce.
-Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
+You attended your lola's birthday celebration and had the most fun you've had in weeks. You had so much fun that you forgot the topics that you worked hard to understand over the past few days.
+After three hours of studying, you read the messages in the group chat and regretted missing out on such a great party.
+You spent hours studying, and once your family arrived, you feasted on the food they brought back.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
 ***Your partner is hitting you up for a coffee date to unwind and spend some quality time. What do you do?
