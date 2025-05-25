@@ -134,34 +134,34 @@ You got distracted by the exciting plot, making both studying and watching ineff
 You fully immersed yourself in the episode, enjoying a well-deserved break that refreshed your spirits.
 The group stream turned into a fun social event, but you barely paid attention to the actual episode or your studies.
 
-***Your long-time friend has returned home and is now urging you to spend the day with them at the mall. What do you do?
+Your long-time friend has returned home and is now urging you to spend the day with them at the mall. What do you do?
 
 1) Only tag along at the mention of free food
 2) Let them know that you're feeling exhausted and kindly request to reschedule
 3) Drop everything and make up for lost time
 4) Suggest moving the activity somewhere quieter
 
-0,40,-5,0,1,0
-10,-40,0,2,3,0
-30,-50,10,-5,3,0
-0,-20,-10,10,2,0
+20,-20,10,0,3,0
+0,25,0,0,2,0
+10,-20,20,-2,3,0
+10,-15,-10,3,2,0
 
 You enjoyed the free food, but the crowded mall quickly left you feeling drained.
-You managed to politely decline, suggesting to reschedule it after your final exams are done. This allowed you to conserve your focus for your studies.
+You managed to politely decline, suggesting to reschedule it after your final exams are done. This allowed you to get your well-deserved rest after a long week.
 You had an amazing time reconnecting, but the day's fun left you completely worn out and behind schedule.
-You had a meaningful catch-up without overwhelming your current priorities.
+You brought your notes to the meeting, and your friend didn’t seem happy about it, but at least you managed to get some of the lessons in.
 
-***Your mom has two coupons for an all-expenses-paid stay at a resort. What do you do?
+Your mom has two coupons for an all-expenses-paid stay at a resort. What do you do?
 
 1) Ask her to take you with her at the resort
 2) Don't bother doing anything—it's none of your business anyway
 3) See if you can ask for the coupons for you and your partner to use
 4) Recommend that she take your dad, especially with their anniversary approaching
 
-0,40,-5,0,1,0
-10,-40,0,2,3,0
-30,-50,10,-5,3,0
-0,-20,-10,10,2,0
+30,-20,20,0,24,0
+0,-10,0,2,3,0
+30,-20,20,0,24,0
+0,0,30,0,1,0
 
 You enjoyed a luxurious break, returning refreshed but with a slight pang of guilt about your studies.
 You remained completely focused on your work, undisturbed by the outside world.
