@@ -100,34 +100,34 @@ The notes gave you a general idea, but you're mostly well-rested and happy with 
 Your inconsistent attendance left you feeling unprepared and guilty, you struggled keeping up with the topics being discussed during the tutoring session.
 You stuck to your independent study plan, feeling good about your self-reliance and managing your own pace.
 
-***Your blockmates are inviting you to study with them for the upcoming exam. What do you do?
+Your blockmates are inviting you to study with them for the upcoming exam. What do you do?
 
 1) Accept their invite and study with them
 2) Just turn down the invite, you’re not really that close anyway
 3) Thank them for the invite but say that you have prior commitments 
 4) Act like you didn't hear them and go on with your life
 
-0,40,-5,0,1,0
-0,-40,0,2,3,0
-0,-50,10,-5,3,0
-0,-20,-10,10,2,0
+0,-20,10,1,2,0
+0,0,-10,0,1,0
+0,-15,5,2,3,0
+0,-10,-10,-2,1,0
 
 It actually turned out to be more of a social gathering rather than a study session but nevertheless you learned some new insights.
 You preserved your personal time, but missed out on potential shared learning opportunities.
 You politely declined, then proceeded to follow through with your own study schedule and feeling good about your focus.
 They kept pestering you, causing an annoying distraction that left you frustrated and behind schedule.
 
-***Your favorite show just released a new episode. After that cliffhanger in the last one, you're dying to know what happens next. What do you do?
+Your favorite show just released a new episode. After that cliffhanger in the last one, you're dying to know what happens next. What do you do?
 
 1) Leave it out for later and let it marinate
 2) The key is multitasking: start the episode while you study
 3) Click that link immediately and watch the latest episode
 4) Call your friends to stream and watch the new episode together
 
-0,40,-5,0,1,0
-0,-40,0,2,3,0
-0,-50,10,-5,3,0
-0,-20,-10,10,2,0
+0,-15,0,3,3,0
+0,-20,5,-2,1,0
+0,-10,20,0,1,0
+0,-20,10,0,1,0
 
 You successfully resisted the urge. Feeling proud and motivated, you decided to study for 3 hours, maintaining your focus with a sense of discipline.
 You got distracted by the exciting plot, making both studying and watching ineffective.
