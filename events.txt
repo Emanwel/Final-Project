@@ -83,17 +83,17 @@ Time with friends matters the most to you. You had fun at the mall with them—s
 Some of the faculty saw you not paying attention and called you out. You hurriedly put your notes away and weren’t able to study at all during the entire period.
 The secretary assigned to take the minutes was late and missed some important details. You offered your copy, and in return, they gave you additional notes for the exams.
 
-***Your upperclassmen are offering free tutor lessons in preparation for your finals. What do you do?
+Your upperclassmen are offering free tutor lessons in preparation for your finals. What do you do?
 
 1) Register for the sessions and pay close attention to fully understand the material
 2) Just ask your blockmates who are attending the tutorial sessions for their notes
 3) Just go when you're in the mood
 4) You know that tutoring doesn’t suit you, so you prefer to study independently
 
--20,40,-5,0,5,0
-0,-40,0,2,1,0
-0,-50,10,-5,2,0
-0,-20,-10,10,3,0
+-20,-15,0,5,5,0
+0,-5,10,1,1,0
+0,-10,-10,-2,2,0
+0,-15,10,2,3,0
 
 You gained a deep understanding, but you're now feeling drained and quite hungry from the long hours.
 The notes gave you a general idea, but you're mostly well-rested and happy with your free time.
