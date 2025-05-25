@@ -15,17 +15,17 @@ Your friends question your request but eventually agreed. For three hours you an
 Your friends watch in horror as you devour an entire platter of cooked meat. You ate too much you forgot the most recent lessons.
 You felt guilty leaving your friends on read while begrudgingly dragging yourself to your study area.
 
-***Your lola is celebrating their 100th birthday and your family gc is bustling with notifications about the party. What do you do?
+Your lola is celebrating their 100th birthday and your family gc is bustling with notifications about the party. What do you do?
 
 1) Reply in the group chat to join in on the fun
 2) Mute the gc and lock in
 3) Send your wishes to lola and ask for leftovers in the group chat
 4) Backread the entire group chat
 
-0,40,-5,0,1,0
-10,-40,0,2,3,0
-30,-50,10,-5,3,0
-0,-20,-10,10,2,0
+20,-15,20,-7,3,0
+-10,-15,-10,5,3,0
+30,-15,0,2,3,0
+0,20,-10,0,2,0
 
 You attended your lola's birthday celebration and had the most fun you've had in weeks. You had so much fun that you forgot the topics that you worked hard to understand over the past few days.
 After three hours of studying, you read the messages in the group chat and regretted missing out on such a great party.
