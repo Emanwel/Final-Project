@@ -210,7 +210,7 @@ void Update(player *player){
         you can buy food sa mall with money pero basig too much na
         na siya. I might also change the mall to like an arcade or smthn.
     */
-    if (player->hunger > 50){
+    if (player->hunger > 100){
         Ending(2, player);
     }
 
@@ -391,10 +391,11 @@ void Calculate(player *player, int action){
                 Read("stats.txt", dialogue, dialogue);
                 printf("Losing Streak: %i\n", loseCount + 1);
                 loseCount++;
-                base.happiness = -1 * ((base.happiness - loseCount) / 2);
+                base.happiness = -1 * (abs(base.happiness + 1 - loseCount) / 2);
             }
             player->energy -= base.energy;
             player->happiness += base.happiness;
+            player->knowledge -= base.knowledge;
             hour[1] += 15;
             studyCount = 0;
             Update(player);
