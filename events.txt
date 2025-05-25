@@ -32,17 +32,17 @@ After three hours of studying, you read the messages in the group chat and regre
 You spent hours studying, and once your family arrived, you feasted on the food they brought back.
 You fell asleep while reading the messages and woke up only to find that you had embarrassingly sent a gibberish message to the group chat.
 
-***Your partner is hitting you up for a coffee date at Mon Dacchiatto to unwind and spend some quality time. What do you do?
+Your partner is hitting you up for a coffee date at Mon Dacchiatto to unwind and spend some quality time. What do you do?
 
 1) Respond to their offer and get ready
 2) Send your apologies and continue studying for 3 hours
 3) Invite them over instead for a cozy home date
 4) Rest your head and leave them unread
 
-0,40,-5,0,1,0
-10,-40,0,2,3,0
-30,-50,10,-5,3,0
-0,-20,-10,10,2,0
+20,-10,20,-3,3,0
+10,-10,-10,3,3,0
+20,-20,10,3,3,0
+0,20,0,-2,4,0
 
 Your date went well, and you feel rejuvenated. Afterward, however, you began to question some of your understanding.
 You felt sad for rejecting your partner's invite, but they still sent over some coffee and snacks with a note. You feel more motivated to study after such a sweet gesture.
@@ -57,8 +57,8 @@ While you were deep in sleep, you forgot some concepts in the middle of your dre
 4) Deadma to your family and just chill in your room
 
 0,40,-5,0,1,0
-10,-40,0,2,3,0
-30,-50,10,-5,3,0
+0,-40,0,2,3,0
+0,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
 Peace was upon you, and you used your time to the fullest. You learned a lot and understood everything, but the guilt of not spending time with your family still lingers
@@ -75,7 +75,7 @@ Your parents came to your room and scolded you for not responding or acknowledgi
 
 0,40,-5,0,1,0
 10,-40,0,2,3,0
-30,-50,10,-5,3,0
+0,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
 You prioritized comfort over social participation and felt no guilt at all. In fact, you felt liberated and decided to study for two hours after leaving.
@@ -85,15 +85,15 @@ The secretary assigned to take the minutes was late and missed some important de
 
 ***Your upperclassmen are offering free tutor lessons in preparation for your finals. What do you do?
 
-1) Register for all the sessions and pay close attention to fully understand the material
+1) Register for the sessions and pay close attention to fully understand the material
 2) Just ask your blockmates who are attending the tutorial sessions for their notes
 3) Just go when you're in the mood
 4) You know that tutoring doesn’t suit you, so you prefer to study independently
 
-0,40,-5,0,1,0
-10,-40,0,2,3,0
-30,-50,10,-5,3,0
-0,-20,-10,10,2,0
+-20,40,-5,0,5,0
+0,-40,0,2,1,0
+0,-50,10,-5,2,0
+0,-20,-10,10,3,0
 
 You gained a deep understanding, but you're now feeling drained and quite hungry from the long hours.
 The notes gave you a general idea, but you're mostly well-rested and happy with your free time.
@@ -108,11 +108,11 @@ You stuck to your independent study plan, feeling good about your self-reliance 
 4) Act like you didn't hear them and go on with your life
 
 0,40,-5,0,1,0
-10,-40,0,2,3,0
-30,-50,10,-5,3,0
+0,-40,0,2,3,0
+0,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
-You gained new insights from the discussion, but the long session left you feeling worn out.
+It actually turned out to be more of a social gathering rather than a study session but nevertheless you learned some new insights.
 You preserved your personal time, but missed out on potential shared learning opportunities.
 You politely declined, then proceeded to follow through with your own study schedule and feeling good about your focus.
 They kept pestering you, causing an annoying distraction that left you frustrated and behind schedule.
@@ -125,8 +125,8 @@ They kept pestering you, causing an annoying distraction that left you frustrate
 4) Call your friends to stream and watch the new episode together
 
 0,40,-5,0,1,0
-10,-40,0,2,3,0
-30,-50,10,-5,3,0
+0,-40,0,2,3,0
+0,-50,10,-5,3,0
 0,-20,-10,10,2,0
 
 You successfully resisted the urge. Feeling proud and motivated, you decided to study for 3 hours, maintaining your focus with a sense of discipline.
