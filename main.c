@@ -332,7 +332,7 @@ void DisplayStats(player *player){
 void Calculate(player *player, int action){
     //delta varables
     statVect base = {0, 0, 0};
-    statVect mod = {0, 0, 0};
+    statVect mod = {0, 2, 1};
 
     //location modifiers
 
@@ -343,20 +343,6 @@ void Calculate(player *player, int action){
         grabe ka dako ang +happiness, etc.
     */
 
-    switch (location){
-    case 1:
-        //home modifiers
-        break;
-    case 2:
-        //school modifiers
-        break;
-    case 3:
-        //mall modifiers
-        break;
-    case 4:
-        //event modifiers
-        break;
-    }
 
     //actions possible
     base.energy = 5 + mod.energy;
