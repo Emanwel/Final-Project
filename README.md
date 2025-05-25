@@ -1,4 +1,4 @@
-# Final-Project: UProcrastinate
+# Final-Project: UPeel Me
 
 ## A novel game that simulates the experience of a Filipino University student “Isko/Iska” in a two-week period before their final examinations. 
 
@@ -32,7 +32,7 @@ This project offers a realistic and engaging simulation of the challenges studen
    * **Launch from the IDE:** Utilize your IDE's built-in run functionality, which will typically recompile if necessary and then execute the program immediately.
 
 
-## How to Play: UProcrastinate (Isko/Iska Simulator)
+## How to Play: UPeel Me (Isko/Iska Simulator)
 
 Welcome, Isko/Iska! Get ready to experience the intense, often unpredictable, weeks leading up to your final exams. This game challenges you to strategically balance your academic duties with your personal well-being to achieve the best possible outcome in your finals.
 
