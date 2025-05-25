@@ -89,7 +89,7 @@ int main ()
     //initialization
     	Read("stats.txt", 69, 91);
         Start();
-    player player = {50, 100, 50, 50};
+    player player = {20, 100, 50, 50};
     gameOver = 0;
 
         /*printf("\nInput Name >> ");
