@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+
 
 
 //player initialization
@@ -80,21 +82,31 @@ void CheckWatch(player *player);
 void DisplayStats(player *player);
 void GoOutside(player *player);
 
+//repurposed nako ang debug btw, originally printf("debug ni") siya pero I used it pang display sa actual numerical stats
 void debug(player *player) {printf("\nHappiness: %i\nKnowledge: %i\nHunger: %i\nDays Played: %i\n", player->happiness, player->knowledge, player->hunger, day);}
+
+/*
+A quick disclaimer sa structure sa code:
+Calling functions within functions really isn't optimal, pero with the sheer number of
+gimmicks and functions ani nga project and the time left for them, calling the update
+and decision functions felt more natural than relying on the gameloop for me. I realized
+the problem last minute na ToT pero I think the program is "simple" enough nga it shouldn't
+be a big problem.
+
+-Emanwelito
+*/
 
 //MAIN LOOP
 //gamay kaayo siya kay functions do the heavy lifting here
+
 int main ()
 {
+    srand(time(NULL));		//para true random
     //initialization
     	Read("stats.txt", 69, 91);
         Start();
     player player = {20, 100, 50, 50};
     gameOver = 0;
-
-        /*printf("\nInput Name >> ");
-    fflush(stdout);
-    scanf("%s", player.name);*/
 
     //gameloop
         while (!gameOver){
@@ -113,7 +125,7 @@ void Start(){
         if (strcmp("START", buff) != 0) Start();
 }
 
-void gameloop(player *player){
+void gameloop(player *player){	//practically redundant nako pag implement btw ToT
     checkCount = 0;
     if (day == 6 || day == 7 || day == 13 || day == 14) isWeekend = 1;
     else isWeekend = 0;
@@ -126,6 +138,8 @@ void gameloop(player *player){
     DisplayStats(player);
 }
 
+//small scale dialogues akoa nalang gipaprint diretso opara di kaayo cluttered ang files
+//the stats.txt file already has a cluttered layout, one wrong newline guba ang tibuok document
 void Ending(int p, player *player){
     char *ends = " ";
     switch (p) {
@@ -157,6 +171,8 @@ void Ending(int p, player *player){
     scanf("%s", ends);
 }
 
+//checks if the event occurs
+//originally I wanted random events to occur, pero nahh samot ka gubot
 int EventCheck(int p){
     checkCount = 1;
     int prob = rand() % 100 + 1;
@@ -166,6 +182,8 @@ int EventCheck(int p){
     else return 0;
 }
 
+ 
+// one of the beefiest functions. Diri ang checks and stops sa game
 void Update(player *player){
     //clock update
 
@@ -181,6 +199,7 @@ void Update(player *player){
         return;
     }
 
+//time update
     if (hour[1] >= 60){
         hour[0]++;
         hour[1] -= 60;
@@ -191,8 +210,8 @@ void Update(player *player){
         gameloop(player);
         return;
     }
-    //energy update
 
+//different endings
     player->hunger += 3;
     
     if (player->happiness <= 0){
@@ -205,25 +224,23 @@ void Update(player *player){
     
     if (day >= 14) Ending(3, player);
 
-    /*
-        again optional na na ang hunger here, I was planning nga
-        you can buy food sa mall with money pero basig too much na
-        na siya. I might also change the mall to like an arcade or smthn.
-    */
     if (player->hunger > 100){
         Ending(2, player);
     }
 
-    //check if late ka sa school; schooltime is 9:00 to 18:00
+    //check if late ka sa school; schooltime is 9:00 to 18:00 IF weekday
     if (location != 2 && hour[0] >= 9 && hour[1] <= 18 && !isWeekend){
         printf("You're late for class. Go to school now.\n");
         player->knowledge--;
         player->happiness--;
     }
 
-    Decision(player);
+    Decision(player);	// this is what I mean about way hunong nga rabbit hole on calling functions
+			// last minute nako nakarealize nga ma optimize ni pero I GUESS nga negligible
+			// ang impact niya sa performance
 }
 
+// the meat sa file manipulation. I print niya ang given range of lines sa given filename
 void Read(const char *filename, int start, int end){
     FILE *fptr = fopen(filename, "r");
     if (fptr == NULL){
@@ -242,6 +259,7 @@ void Read(const char *filename, int start, int end){
     fclose(fptr);
 }
 
+// pili siya ug event from events.txt and gets the comma separated values para sa ila properties per choice
 rand_event RandEventBuild(){
     int choose = rand() % 10;
     rand_event rand;
@@ -258,6 +276,7 @@ rand_event RandEventBuild(){
     int current = 1;
     //debug();
     int i = 0;
+
     while(fgets(buff, 1000, fptr)){
     //debug();
 
@@ -283,10 +302,15 @@ rand_event RandEventBuild(){
 
     fclose(fptr);
 
-    
     return rand;
 }
 
+/*
+I don't like the player to have a numerical value sa ila
+display kay mura silag ma influence sa pagkita ug high or
+low value to balance it out. Para naa puy vision ang player,
+naghatag ko ug stats nga mu update depende sa usa ka range
+*/
 void DisplayStats(player *player){
     printf("\nEnergy: %i\n", player->energy);
 
@@ -300,16 +324,6 @@ void DisplayStats(player *player){
     }
 
     //conditionals
-
-    /*
-        Guys nalingaw gyud kog code HAHAHAHA so what this means kay
-        depende sa threshold given sa ubos kay naay lain2 nga descriptions
-        ihatag ang program. In this case, naa sila'y lain2 nga dialogue
-        
-        For example:
-        Kung big imo knowledge pero di pa kaayo, moingon ang program ug
-        "You feel relieved, knowing that you retain the studies from what you have studied for."
-    */
 
     if (player->knowledge >= 70) Read("stats.txt", 3, 3);
     else if (player->knowledge >= 50) Read("stats.txt", 4, 4);
@@ -329,21 +343,13 @@ void DisplayStats(player *player){
     Decision(player);
 }
 
+// chonky boi, I decided nga i usa ang pag choose sa actions
+// sleep, play, and game para ma usa ang ilahang calculations
 void Calculate(player *player, int action){
     //delta varables
     statVect base = {0, 0, 0};
     statVect mod = {0, 2, 1};
-
-    //location modifiers
-
-    /*
-        Naay modifiers ang happiness ug ang knowledge depende kung asa ka
-        kung mag study ka sa school, more effective ang +knowledge, less ang
-        +happiness, kung naa kas party kay mas dali mahurot ang energy pero
-        grabe ka dako ang +happiness, etc.
-    */
-
-
+	
     //actions possible
     base.energy = 5 + mod.energy;
     base.knowledge = 2 + mod.knowledge;
@@ -377,7 +383,7 @@ void Calculate(player *player, int action){
 
         case 2:
             //play games
-            if (location == 2) base.knowledge -= 5;
+            if (location == 2) base.knowledge -= 2;
             if ((rand() % 20 + 1) >= 5){
                 //win game
                 int dialogue = rand() % 5 + 21;
@@ -391,7 +397,8 @@ void Calculate(player *player, int action){
                 Read("stats.txt", dialogue, dialogue);
                 printf("Losing Streak: %i\n", loseCount + 1);
                 loseCount++;
-                base.happiness = -1 * (abs(base.happiness + 1 - loseCount) / 2);
+		//immune ka sa losing happiness IF naa ka sa mall
+                if (location != 3) base.happiness = -1 * (abs(base.happiness + 1 - loseCount) / 2);
             }
             player->energy -= base.energy;
             player->happiness += base.happiness;
@@ -437,6 +444,7 @@ void CheckWatch(player *player){
     Decision(player);
 }
 
+// change locations
 void GoOutside(player *player){
     printf("\nWhere are you going today?\n\n");
     Read("stats.txt", 28, 30);
@@ -464,6 +472,10 @@ void GoOutside(player *player){
     Update(player);
 }
 
+// I wanted the player to only have an event once per day pero naa may hunger
+// I also wanted nga naay specific conditions, ma implement ra siya pero that
+// will make the program a bit more complex than it should be (and right now
+// it's already very complex)
 void Talk (player *player){
     if (EventCheck(50)){
         rand_event current_event = RandEventBuild();
@@ -477,6 +489,7 @@ void Talk (player *player){
     Update(player);
 }
 
+// this is after the talk nga successful ang probability
 void Dialogue (rand_event source, player *player){
     dial: 
         fflush(stdin);
@@ -495,15 +508,10 @@ void Dialogue (rand_event source, player *player){
     hour[0] += source.choice[i][4];
     hour[1] += source.choice[i][5];
 
-    /**printf("%i %i\n", source.choice[i][0], player->hunger);
-    printf("%i %i\n", source.choice[i][1], player->energy);
-    printf("%i %i\n", source.choice[i][2], player->happiness);
-    printf("%i %i\n", source.choice[i][3], player->knowledge);
-    printf("%i %i\n", source.choice[i][4], hour[0]);**/
-
     Read("events.txt", source.line + i + 11, source.line + i + 11);
 }
 
+// the function nga isigeg tawag and eats up the stack
 void Decision(player *player){
 	
     fflush(stdin);
