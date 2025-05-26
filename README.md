@@ -74,3 +74,21 @@ The heart of the game lies in **strategic planning**. You need to find the optim
 * **Manage your resources.** Use your Energy effectively to accomplish tasks that benefit you most, and ensure you're eating regularly to keep hunger at bay.
 
 Your final exam outcome will directly reflect how well you managed these core aspects throughout the weeks. Good luck, Isko/Iska – your finals await!
+
+## Sample Input/Output:
+
+" You decide what to do with your time.  
+  Input one of these keywords to continue.
+
+STATS - Show how much energy you have for the day  
+STUDY - Stidy for your upcoming test  
+GAMES - Play a game of Lihokang Leyenda: Buto Buto  
+FRIENDS - Talk to your friends about their plans for the day  
+TIME - Check your watch  
+OUTSIDE - Go to a place  
+SLEEP - Take a 1hr nap (sleeps through the night when sleeping at home by 21:00)  
+
+\>> SLEEP **[INPUT]**
+
+
+You took a nap for an hour to refresh your senses. **[OUTPUT]**"
