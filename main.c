@@ -229,7 +229,7 @@ void Update(player *player){
     }
 
     //check if late ka sa school; schooltime is 9:00 to 18:00 IF weekday
-    if (location != 2 && hour[0] >= 9 && hour[1] < 18 && !isWeekend){
+    if (location != 2 && hour[0] >= 9 && hour[0] < 18 && !isWeekend){
         printf("You're late for class. Go to school now.\n");
         player->knowledge--;
         player->happiness--;
