@@ -412,7 +412,7 @@ void Calculate(player *player, int action){
             //sleep
             if (location == 3) printf("You can't sleep in the mall.");
             else if (location == 1 && hour[0] >= 21){
-                player->energy += base.energy + abs(hour[0] - 18);
+                player->energy += base.energy + abs(hour[0] - 18) * 10;
                 printf("\nSleeping through the night.\n");
                 hour[0] = 6;
                 hour[1] = 0;
@@ -499,7 +499,7 @@ void Dialogue (rand_event source, player *player){
         char input[2];
         fgets(input, 2, stdin);
         int i = atoi(input) - 1;
-        if (i < 0 || i >= 5) goto dial;
+        if (i < 0 || i > 4) goto dial;
 
     player->hunger -= source.choice[i][0];
     player->energy += source.choice[i][1];
@@ -508,7 +508,7 @@ void Dialogue (rand_event source, player *player){
     hour[0] += source.choice[i][4];
     hour[1] += source.choice[i][5];
 
-    Read("events.txt", source.line + i + 11, source.line + i + 11);
+    Read("events.txt", source.line + i + 12, source.line + i + 12);
 }
 
 // the function nga isigeg tawag and eats up the stack
