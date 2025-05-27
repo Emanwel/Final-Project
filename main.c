@@ -169,6 +169,7 @@ void Ending(int p, player *player){
     debug(player);
     printf("\nEnter any key to exit.\n>> ");
     scanf("%s", ends);
+    exit(0);
 }
 
 //checks if the event occurs
