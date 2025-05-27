@@ -414,7 +414,7 @@ void Calculate(player *player, int action){
             else if (location == 1 && hour[0] >= 21){
                 player->energy += base.energy + abs(hour[0] - 18) * 10;
                 printf("\nSleeping through the night.\n");
-                hour[0] = 6;
+                hour[0] += 24 - hour[0] + 6;
                 hour[1] = 0;
 		Update(player);
                 gameloop(player);
