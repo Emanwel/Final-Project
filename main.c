@@ -417,7 +417,6 @@ void Calculate(player *player, int action){
                 hour[0] += 24 - hour[0] + 6;
                 hour[1] = 0;
 		Update(player);
-                return;
             }
             else{
                 player->energy += base.energy;
