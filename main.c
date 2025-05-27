@@ -416,6 +416,7 @@ void Calculate(player *player, int action){
                 printf("\nSleeping through the night.\n");
                 hour[0] = 6;
                 hour[1] = 0;
+		Update(player);
                 gameloop(player);
                 return;
             }
