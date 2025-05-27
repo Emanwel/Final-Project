@@ -222,7 +222,7 @@ void Update(player *player){
     	Ending(1, player);
     }
     
-    if (day >= 14) Ending(3, player);
+    if (day >= 7) Ending(3, player);
 
     if (player->hunger > 100){
         Ending(2, player);
