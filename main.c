@@ -509,6 +509,8 @@ void Dialogue (rand_event source, player *player){
     hour[1] += source.choice[i][5];
 
     Read("events.txt", source.line + i + 12, source.line + i + 12);
+
+    Update (player);
 }
 
 // the function nga isigeg tawag and eats up the stack
