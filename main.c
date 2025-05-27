@@ -85,17 +85,6 @@ void GoOutside(player *player);
 //repurposed nako ang debug btw, originally printf("debug ni") siya pero I used it pang display sa actual numerical stats
 void debug(player *player) {printf("\nHappiness: %i\nKnowledge: %i\nHunger: %i\nDays Played: %i\n", player->happiness, player->knowledge, player->hunger, day);}
 
-/*
-A quick disclaimer sa structure sa code:
-Calling functions within functions really isn't optimal, pero with the sheer number of
-gimmicks and functions ani nga project and the time left for them, calling the update
-and decision functions felt more natural than relying on the gameloop for me. I realized
-the problem last minute na ToT pero I think the program is "simple" enough nga it shouldn't
-be a big problem.
-
--Emanwelito
-*/
-
 //MAIN LOOP
 //gamay kaayo siya kay functions do the heavy lifting here
 
